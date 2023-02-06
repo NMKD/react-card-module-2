@@ -19,7 +19,6 @@ const CountersList = () => {
   };
 
   const handleIncrement = (id) => {
-    // setCount((prevState) => prevState + 1);
     const newCounters = counters.filter((count) => ({
       ...count,
       value: count.id === id ? count.value++ : false,

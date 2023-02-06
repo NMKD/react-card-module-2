@@ -1,6 +1,4 @@
 const Counter = ({ id, value, name, onDelete, onIncrement, onDecrement }) => {
-  // const [count, setCount] = useState(value);
-
   const formatCount = () => {
     return value === 0 ? "empty" : value;
   };
@@ -9,16 +7,6 @@ const Counter = ({ id, value, name, onDelete, onIncrement, onDecrement }) => {
     let classes = "badge m-2 ";
     return (classes += value === 0 ? "bg-warning" : "bg-primary");
   };
-
-  // const handleIncrement = () => {
-  //   setCount((prevState) => prevState + 1);
-  // };
-
-  // const handleDecrement = () => {
-  //   setCount((prevState) =>
-  //     prevState === 0 ? (prevState = 0) : prevState - 1
-  //   );
-  // };
 
   return (
     <div>
