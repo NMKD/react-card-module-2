@@ -18,11 +18,34 @@ const CountersList = () => {
     setCounters(initialCounters);
   };
 
+  const handleIncrement = (id) => {
+    // setCount((prevState) => prevState + 1);
+    const newCounters = counters.filter((count) => ({
+      ...count,
+      value: count.id === id ? count.value++ : false,
+    }));
+    setCounters(newCounters);
+  };
+
+  const handleDecrement = (id) => {
+    const newCounters = counters.filter((count) => ({
+      ...count,
+      value: count.id === id ? count.value-- : false,
+    }));
+    setCounters(newCounters);
+  };
+
   return (
     <>
       <h1>Counters list</h1>
       {counters.map((count) => (
-        <Counter key={count.id} {...count} onDelete={handlDelete} />
+        <Counter
+          key={count.id}
+          {...count}
+          onDelete={handlDelete}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
       ))}
       <button className="btn btn-primary btn-sm mt-2" onClick={handleUpdate}>
         update
