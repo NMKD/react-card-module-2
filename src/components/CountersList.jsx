@@ -21,7 +21,7 @@ const CountersList = () => {
   const handleIncrement = (id) => {
     const newCounters = counters.filter((count) => ({
       ...count,
-      value: count.id === id ? count.value++ : false,
+      value: count.id === id ? count.value++ : count.value,
     }));
     setCounters(newCounters);
   };
@@ -29,7 +29,7 @@ const CountersList = () => {
   const handleDecrement = (id) => {
     const newCounters = counters.filter((count) => ({
       ...count,
-      value: count.id === id ? count.value-- : false,
+      value: count.id === id ? count.value-- : count.value,
     }));
     setCounters(newCounters);
   };
